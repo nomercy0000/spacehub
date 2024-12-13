@@ -176,3 +176,36 @@ local Button = MainTab:CreateButton({
    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
    end,
 })
+
+local Button = MainTab:CreateButton({
+   Name = "Dahood",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Dekos-lgbty/dahood/main/starhook"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Murder Mystery 2",
+   Callback = function()
+   for _, url in pairs({
+    "https://raw.githubusercontent.com/Dekos-lgbty/halloweens/refs/heads/main/autofarms",
+    "https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2"
+}) do
+    loadstring(game:HttpGet(url, true))()
+end
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Doors",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Build A Boat",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/yt-flix/Build/main/BuildABoatSpectro"))();
+   end,
+})
