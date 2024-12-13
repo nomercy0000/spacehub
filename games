@@ -1,0 +1,178 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "space hub",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Space",
+   LoadingSubtitle = "by nomercy",
+   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "CarlosGotMotionHub"
+   },
+
+   Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "dhSzDJvx", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "SpaceHub",
+      Subtitle = "Key In Discord Server",
+      Note = "Join Server For Key - https://discord.gg/JG2Zc4Ewgb", -- Use this to tell the user how to get a key
+      FileName = "SpaceHubKey", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"juFGw93nFsjcnz"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("scripts", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+Rayfield:Notify({
+   Title = "Script Successfully executed!",
+   Content = "Thank You For Using SpaceHub!",
+   Duration = 4.5,
+   Image = nil,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "infinite jump",
+   Callback = function()
+   --Toggles the infinite jump between on or off on every script run
+_G.infinjump = not _G.infinjump
+
+if _G.infinJumpStarted == nil then
+    --Ensures this only runs once to save resources
+    _G.infinJumpStarted = true
+
+    --Notifies readiness
+    game.StarterGui:SetCore("SendNotification", {Title="WeAreDevs.net"; Text="The WeAreDevs Infinite Jump exploit is ready!"; Duration=5;})
+
+    --The actual infinite jump
+    local plr = game:GetService('Players').LocalPlayer
+    local m = plr:GetMouse()
+    m.KeyDown:connect(function(k)
+        if _G.infinjump then
+            if k:byte() == 32 then
+            humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+            humanoid:ChangeState('Jumping')
+            wait()
+            humanoid:ChangeState('Seated')
+            end
+        end
+    end)
+end
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "Walkspeed Slider",
+   Range = {16, 300},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "infinite yield",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/nomercyisyourdad/micup/refs/heads/main/infinteyield"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "System Broken",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script'))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Baseplate Extender",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/bRfz41fk"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Unsuspend VC",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/platinumicy/unsuspend/refs/heads/main/unsuspend"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Bedwars",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/cocotv666/Aurora/main/Aurora_Loader"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Arsenal",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Nickyangtpe/Vapa-v2/refs/heads/main/Vapav2-Arsenal.lua", true))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Rivals",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Sheeshablee73/Scriptss/main/Rivals%20Latest.lua",true))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Fisch ( speed hub x )",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Bloxfruits",
+   Callback = function()
+   loadstring(game.HttpGet(game,'https://raw.githubusercontent.com/Yumiara/Python/refs/heads/main/BloxFruit-XYZ.lua'))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Empty Tools",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/likelysmith/EmptyTools/main/script"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Evade",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Evade"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Chat Bypass",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "The Strongest Battlegrounds",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
